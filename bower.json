@@ -1,0 +1,13 @@
+{
+  "name": "Project",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "mithril": "*"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
