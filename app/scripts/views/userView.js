@@ -1,4 +1,4 @@
-
+ 
 var vm = require('../viewModels/userViewModel');
 
 vm.init()
@@ -13,6 +13,14 @@ var showsubmit=function()
 	vm.show();
 	return false;
 }
+  
+
+var loginsubmit = function()
+{
+	vm.login();
+	return false;
+}
+
 
 var userView=function() {
 	return m("html",[
@@ -30,10 +38,18 @@ var userView=function() {
 						m("br")
 						
 					]),
+					
 					m("form",{onsubmit:showsubmit},[
-						m("button",{onclick:vm.show},"Show")
-					])
-			]) 
+						m("button","Show")
+                    ]),
+					
+				m("form",{onsubmit:showsubmit},[
+					     m("input" ,{onchange:m.withAttr("value",vm.username),value:vm.username(), placeholder:"Enter Username"}),
+					     m("input",{onchange:m.withAttr("value",vm.password),value:vm.password(), placeholder:"Enter Password"}),
+					     m("button","login"),
+				     ])
+					
+		]) 
 	]);
 };
 

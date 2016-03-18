@@ -1,4 +1,4 @@
-
+ 
 var User=function(data){
 
 	this.username=m.prop(data.username);
