@@ -3,38 +3,50 @@ var vm = require('../viewModels/userViewModel');
 
 vm.init()
 
-var submit= function(){
-	vm.add();
-	
-	return false;
-}
-var showsubmit=function()
-{
-	vm.show();
-	return false;
-}
+// var submit= function(){
+// 	vm.add();
+// 	return false;
+// }
+// var loginsubmit=function()
+// {
+// 	vm.login();
+// 	return false;
+// }
+// var showsubmit=function()
+// {
+// 	vm.show();
+// 	return false;
+// }
+
+
 
 var userView=function() {
+
+	
 	return m("html",[
 				m("body",[
-					m("form",{onsubmit:submit},[
-						m("input",{onchange:m.withAttr("value", vm.username), value:vm.username(), placeholder:"Enter Username"}),
-						m("br"),
-						m("input",{onchange:m.withAttr("value", vm.emailID), value:vm.emailID(),placeholder:"Enter EmailID"}),
-						m("br"),
-						m("input",{onchange:m.withAttr("value", vm.password), value:vm.password(),placeholder:"Enter Password"}),
-						m("br"),
-						m("input",{onchange:m.withAttr("value", vm.answer), value:vm.answer(),placeholder:"Enter Answer"}),
-						m("br"),
-						m("button","Submit"),
-						m("br")
+					m("div[id=First]",[
+						m("a[class=Main]",{href:"?/"},"Home"),
 						
-					]),
-					m("form",{onsubmit:showsubmit},[
-						m("button",{onclick:vm.show},"Show")
+
+						m("a",{href:"?/sign-up"},"Sign-Up"),
+						
+
+						m("a",{href:"?/show"},"Show"),
+						
+
+						m("a",{href:"?/login"},"Login"),
 					])
+					
 			]) 
-	]);
+	])
+
+	
 };
 
+
+
+
+
 module.exports = userView;
+
