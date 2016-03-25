@@ -16,16 +16,15 @@ var userViewModel=(function(){
 		vm.password=m.prop(""); 
 		vm.answer=m.prop("");
 		vm.token=m.prop("");
+		vm.response=m.prop("");
 
 		
-		
+//user registration			
 		vm.add=function()
 		{
 			console.log("hello")
 			console.log(vm.username);
-
-			
-			
+		
 			m.request({
 				 method: "POST",
 				 url: "http://localhost:3000/api/user",
@@ -48,12 +47,13 @@ var userViewModel=(function(){
 			
 		}
 
+//user details
 		vm.show=function()
 		{
 
 			m.request({
 				 method: "GET",
-				 url: "http://localhost:3000/api/users",
+				 url: "http://localhost:3000/api/user",
 			
 				}).then(function(data){
 					if(data){
@@ -74,19 +74,15 @@ var userViewModel=(function(){
 				})
 		}
 
-
-		vm.Username=m.prop("");
-		vm.Password=m.prop("");
-		vm.response=m.prop("");
-
+//user login
 		vm.login=function()
 		{
 			m.request({
 				method:"POST",
 				url:"http://localhost:3000/api/login",
 				data:{
-					username:vm.Username(),
-					password:vm.Password()
+					username:vm.username(),
+					password:vm.password()
 				}
 			}).then(function(data){
 				if(data.username!=undefined)
@@ -99,6 +95,7 @@ var userViewModel=(function(){
 			})
 		}
 
+//user password reset request
 		vm.PReset=function()
 		{
 			m.request({
@@ -112,7 +109,7 @@ var userViewModel=(function(){
 					if(response!=null){
 						console.log(response);
 						vm.token=response;
-						
+
 						console.log(data)
 
 						
@@ -120,6 +117,7 @@ var userViewModel=(function(){
 				})
 		}
 
+//user password update
 		vm.PUpdate=function()
 		{
 			m.request({

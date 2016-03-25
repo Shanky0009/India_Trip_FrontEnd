@@ -12,8 +12,8 @@ var loginView=function()
 		return m("html",[
 			m("body",[
 				m("form",{onsubmit:loginsubmit},[
-						m("input",{onchange:m.withAttr("value",vm.Username),value:vm.Username(),placeholder:"Enter Username"}),
-						m("input",{onchange:m.withAttr("value",vm.Password),value:vm.Password(),placeholder:"Enter Your Password"}),
+						m("input",{onchange:m.withAttr("value",vm.username),value:vm.username(),placeholder:"Enter Username"}),
+						m("input",{onchange:m.withAttr("value",vm.password),value:vm.password(),placeholder:"Enter Your Password"}),
 						m("button","Login")
 					]),
 				m("h",vm.response),
