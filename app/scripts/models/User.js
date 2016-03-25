@@ -21,4 +21,3 @@ User.userlist=Array;
 
 
 module.exports=User;
-module.exports=User;
