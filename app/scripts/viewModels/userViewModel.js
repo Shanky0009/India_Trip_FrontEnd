@@ -1,4 +1,4 @@
-
+  
 var User=require('../models/User');
 
 
@@ -28,7 +28,7 @@ var userViewModel=(function(){
 			
 			m.request({
 				 method: "POST",
-				 url: "http://localhost:3000/api/users",
+				 url: "http://localhost:3000/api/user",
 				 data:{
 				 	username:vm.username(),
 				 	emailID:vm.emailID(),
@@ -50,12 +50,14 @@ var userViewModel=(function(){
 
 		vm.show=function()
 		{
+
 			m.request({
 				 method: "GET",
-				 url: "http://localhost:3000/api/user",
+				 url: "http://localhost:3000/api/users",
 			
 				}).then(function(data){
 					if(data){
+<<<<<<< HEAD
 						
 						
 						
@@ -117,6 +119,9 @@ var userViewModel=(function(){
 						console.log(response);
 						vm.token=response;
 
+=======
+						console.log(data)
+>>>>>>> 1a68a825554129fc9a2cc969bca9c56d8fc44ad6
 						
 					}
 				})

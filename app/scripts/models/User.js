@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 
 var User={};
 
 User.user=function(data){
+=======
+ 
+var User=function(data){
+>>>>>>> 1a68a825554129fc9a2cc969bca9c56d8fc44ad6
 
 	this.username=m.prop(data.username);
 	this.emailID=m.prop(data.emailID);
@@ -13,7 +18,11 @@ User.user=function(data){
 	this.userData=m.prop(data.userData);
 }
 
+<<<<<<< HEAD
 User.userlist=Array;
 
 
 module.exports=User;
+=======
+module.exports=User; 
+>>>>>>> 1a68a825554129fc9a2cc969bca9c56d8fc44ad6
