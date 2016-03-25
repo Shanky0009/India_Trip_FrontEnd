@@ -46,6 +46,7 @@ var userView=function() {
 				m("form",{onsubmit:showsubmit},[
 					     m("input" ,{onchange:m.withAttr("value",vm.username),value:vm.username(), placeholder:"Enter Username"}),
 					     m("input",{onchange:m.withAttr("value",vm.password),value:vm.password(), placeholder:"Enter Password"}),
+					    // m("br"),
 					     m("button","login"),
 				     ])
 					

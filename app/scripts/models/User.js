@@ -7,4 +7,4 @@ var User=function(data){
 	this.answer=m.prop(data.answer);
 }
 
-module.exports=User;
+module.exports=User; 
