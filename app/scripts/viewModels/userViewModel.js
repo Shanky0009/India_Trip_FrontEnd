@@ -57,13 +57,7 @@ var userViewModel=(function(){
 			
 				}).then(function(data){
 					if(data){
-<<<<<<< HEAD
-						
-						
-						
-						// vm.list.pop(vm.userData);
-						
-						
+
 						if (vm.userData==undefined) 
 						{
 							vm.userData=data;
@@ -118,10 +112,9 @@ var userViewModel=(function(){
 					if(response!=null){
 						console.log(response);
 						vm.token=response;
-
-=======
+						
 						console.log(data)
->>>>>>> 1a68a825554129fc9a2cc969bca9c56d8fc44ad6
+
 						
 					}
 				})
