@@ -2,12 +2,12 @@
 var User=require('../models/User');
 
 
-
+var Cookies= require('js-cookie');
 var userViewModel=(function(){
 
 	var vm={}
  
-	vm.init=function(){
+	vm.init=function(){ 
 
 		vm.list=new User.userlist();
 
@@ -17,17 +17,15 @@ var userViewModel=(function(){
 		vm.answer=m.prop("");
 		vm.token=m.prop("");
 		vm.response=m.prop("");
+		vm.response1=m.prop("");
 
 		
 //user registration			
 		vm.add=function()
 		{
-			console.log("hello")
-			console.log(vm.username);
-		
 			m.request({
 				 method: "POST",
-				 url: "http://localhost:3000/api/user",
+				 url: "http://localhost:3000/api/users",
 				 data:{
 				 	username:vm.username(),
 				 	emailID:vm.emailID(),
@@ -35,12 +33,12 @@ var userViewModel=(function(){
 				 	answer:vm.answer()
 				 }
 				}).then(function(data){
-					if(data!=null){
-						console.log(data.username)
+					if(data.username==""){
+						vm.response1=(data.username+"you have registered successfully")
 					}
 					else
 					{
-						console.log("no user created")
+						vm.response1=data;
 					}
 				})
 
@@ -61,15 +59,11 @@ var userViewModel=(function(){
 						if (vm.userData==undefined) 
 						{
 							vm.userData=data;
+							console.log(vm.userData);
 							for (var i = 0; i <=vm.userData.length - 1; i++) {
 								vm.list.push(vm.userData[i]);			
 							}
-							console.log(vm.userData);
-						}	
-
-						
-						
-						
+						}		
 					}
 				})
 		}
@@ -81,19 +75,33 @@ var userViewModel=(function(){
 				method:"POST",
 				url:"http://localhost:3000/api/login",
 				data:{
-					username:vm.username(),
-					password:vm.password()
+					emailID:vm.emailID(),
+					password:vm.password(),
+					cookieData:Cookies.get("data")
 				}
 			}).then(function(data){
 				if(data.username!=undefined)
 				{
-					vm.response=(data.username+" Logged In");
-					
+					if(Cookies.get("data")==null)
+					{
+						m.route('/posts');
+						// vm.response1=(data.username+" Logged In");
+						Cookies.set("data",data, { expires: 1 });
+						
+
+					}
+					else
+					{
+						m.route('/posts?response=another user logged in');
+						vm.response1=("Another User Logged In");
+					}
 				}
-				else vm.response=data;
+				else vm.response1=data;
 
 			})
 		}
+
+
 
 //user password reset request
 		vm.PReset=function()
@@ -106,13 +114,11 @@ var userViewModel=(function(){
 				 	answer:vm.answer
 				 }			
 				}).then(function(response){
-					if(response!=null){
+					if(response!=null)
+					{
 						console.log(response);
 						vm.token=response;
-
-						console.log(data)
-
-						
+						console.log(data)	
 					}
 				})
 		}

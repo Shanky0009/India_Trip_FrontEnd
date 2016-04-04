@@ -9,8 +9,7 @@ var forgot= function(){
 
 var forgotView=function()
 {
-		return m("html",[
-			m("body",[
+		return m("div[id=forgot]",[
 				m("h",vm.token),
 				m("form",{onsubmit:forgot},[
 						m("input",{onchange:m.withAttr("value",vm.token), value:vm.token(),placeholder:"Enter Your Token"}),
@@ -22,7 +21,6 @@ var forgotView=function()
 						
 					])
 				])
-			])
 };
 
 module.exports=forgotView;

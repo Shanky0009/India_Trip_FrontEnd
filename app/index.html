@@ -6,9 +6,11 @@
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Mithril</title>
+  <title>India Trip!</title>
   <meta name="description" content="">
   <meta name="author" content="">
+
+<!-- <link rel="short icon" href="/images/peacock_logo.png"/> -->
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -17,6 +19,9 @@
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -26,19 +31,70 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="/images/peacock_logo.png">
 
     
 
 </head>
-<body>
+<body >
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-<div id="main"></div>
+            <div class="head1">
+          
+                  <div class="imgUp"><a href="http://127.0.0.1:9000/"><img src="/images/peacock_logo.png"></a></div>
+                  <div class="searchForm">
 
- 
+                     <form action="http://127.0.0.1:3000/search" method="GET">
+
+                         <input type="text" name="name" placeholder="Search here...">
+                         <button type="submit" >
+                             <img src="/images/search-icon-hi.png"  alt="submit" />
+                          </button>   
+                    </form> 
+                   </div> 
+                   
+                   <!-- <div class='logout'>
+                      <a href="http://127.0.0.1:3000/logout" >
+                        <input type="button" name="logout" value="LogOut"  /> </a>
+                  </div> -->
+                      
+            </div>
+
+<div id="post"></div>
+<div id="First"></div>
+<div id="main">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+
+    <!-- Wrapper for slides -->
+         <div class="carousel-inner" id="slider" role="listbox">
+              <div class="item active">
+                <img src="/images/slide.jpg" alt="Chania" >
+              </div>
+
+              <div class="item">
+                <img src="/images/Incredible_india.jpg" alt="Chania" >
+              </div>
+    
+              <div class="item">
+                <img src="/images/Incredible_India_by_bals4u2000.jpg" alt="Flower" >
+              </div>
+
+             <div class="item">
+                <img src="/images/The-Incredible-India.jpg" alt="Flower" >
+              </div>
+          </div>
+</div>
+
+
 
 
 <div class="footer">
@@ -63,8 +119,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="scripts/jquery.js"></script>
     <script src="scripts/mithril.min.js"></script>
-    <script src="scripts/mithril-ui-router.js"></script>
-    <script src="scripts/mithril-storage.js"></script>
+    <!-- <script src="scripts/mithril-ui-router.js"></script>
+    <script src="scripts/mithril-storage.js"></script> -->
     <script src="scripts/browserify/main.js"></script>
     
 

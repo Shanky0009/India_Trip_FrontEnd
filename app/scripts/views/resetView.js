@@ -1,3 +1,4 @@
+
 var vm = require('../viewModels/userViewModel');
 
 vm.init()
@@ -9,8 +10,7 @@ var reset= function(){
 
 var resetView=function()
 {
-		return m("html",[
-			m("body",[
+		return m("div[id=reset]",[
 				m("form",{onsubmit:reset},[
 						m("input",{onchange:m.withAttr("value", vm.emailID), value:vm.emailID(), placeholder:"Enter Email ID"}),
 						m("br"),
@@ -21,10 +21,11 @@ var resetView=function()
 						
 					]),
 				m("h1",vm.token),
-				m("a",{href:"?/forgot"},"Click to Change Password if you have Token")
+				m("a",{config:m.route,href:"/forgot"},"Click to Change Password if you have Token")
 
 				])
-			])
 };
+
+
 
 module.exports=resetView;

@@ -426,3 +426,18 @@ th {
   padding: 0;
 }
 
+#destination table{
+  width:100%;
+  height: 500px;
+}
+
+#destination button{
+  border: 1px solid black;
+  width: 170px;
+  height: 70px;
+  float:left; 
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 20px;
+  color: gray;
+}
