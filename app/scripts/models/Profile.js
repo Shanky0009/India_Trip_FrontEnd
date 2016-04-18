@@ -1,8 +1,6 @@
 var Profile={};
 
 Profile.profile=function(data){
-
-
 	this.first_name=m.prop(data.first_name);
 	this.last_name=m.prop(data.last_name);
 	this.city=m.prop(data.city);
@@ -14,10 +12,10 @@ Profile.profile=function(data){
 	this.DOB=m.prop(data.DOB);
 	this.UserID=m.prop(data.UserID);
 	this.pinCode=m.prop(data.pinCode);
+	this.userInfo=m.prop(data.userInfo);
 }
 
-
-Profile.userlist=Array;
-
+Profile.profilelist=Array;
+Profile.profileHtllist=Array;
 
 module.exports=Profile;

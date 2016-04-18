@@ -1,8 +1,6 @@
 var User={};
 
 User.user=function(data){
-
-
 	this.username=m.prop(data.username);
 	this.emailID=m.prop(data.emailID);
 	this.password=m.prop(data.password);
@@ -11,8 +9,6 @@ User.user=function(data){
 	this.userData=m.prop(data.userData);
 }
 
-
 User.userlist=Array;
-
 
 module.exports=User;

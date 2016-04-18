@@ -10,7 +10,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-<!-- <link rel="short icon" href="/images/peacock_logo.png"/> -->
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -18,10 +17,9 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/bootstrap.min.js"></script>
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -29,99 +27,155 @@
   <link rel="stylesheet" href="styles/skeleton.css">
   <link rel="stylesheet" href="styles/main.scss">
 
-  <!-- Favicon
+  <!-- Logo
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/images/peacock_logo.png">
+ 
+ <!-- Loading Script
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+     <script> 
+          $(window).load(function() {
+          // Animate loader off screen
+          $(".se-pre-con").fadeOut("very slow");;
+          });
+     </script>
 
-    
+<!-- Loading Style
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+     <style type="text/css">
+        .no-js #loader { display: none;  }
+
+        .js #loader { display: block; position: absolute; left: 100px; top: 0; }
+
+        .se-pre-con {
+          position: fixed;
+          left: 0px;
+          top: 0px;
+          width: 100%;
+          height: 100%;
+          z-index: 9999;
+          background: url(styles/loading.gif) center no-repeat #fff;
+         }
+     </style>
 
 </head>
-<body >
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<body>
+        <!-- Primary Page Layout
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-            <div class="head1">
-          
-                  <div class="imgUp"><a href="http://127.0.0.1:9000/"><img src="/images/peacock_logo.png"></a></div>
-                  <div class="searchForm">
-
-                     <form action="http://127.0.0.1:3000/search" method="GET">
-
-                         <input type="text" name="name" placeholder="Search here...">
-                         <button type="submit" >
-                             <img src="/images/search-icon-hi.png"  alt="submit" />
-                          </button>   
-                    </form> 
-                   </div> 
-                   
-                   <!-- <div class='logout'>
-                      <a href="http://127.0.0.1:3000/logout" >
-                        <input type="button" name="logout" value="LogOut"  /> </a>
-                  </div> -->
-                      
+      <!-- Header Layout
+              –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <div id="wrapper">
+      <div class="se-pre-con"></div>
+            <!-- Header Layout
+              –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            <div id="header">
+              <div id="First"></div>
             </div>
+            <div class="clear"></div>
 
-<div id="post"></div>
-<div id="First"></div>
-<div id="main">
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-              <li data-target="#myCarousel" data-slide-to="3"></li>
-          </ol>
+            <!-- Middle Body Layout
+              –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+             <div id="content"> 
+                <div id="main">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                      <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                              <li data-target="#myCarousel" data-slide-to="1"></li>
+                              <li data-target="#myCarousel" data-slide-to="2"></li>
+                              <li data-target="#myCarousel" data-slide-to="3"></li>
+                            </ol>
 
-    <!-- Wrapper for slides -->
-         <div class="carousel-inner" id="slider" role="listbox">
-              <div class="item active">
-                <img src="/images/slide.jpg" alt="Chania" >
-              </div>
+                      <!-- Wrapper for slides -->
+                           <div class="carousel-inner" id="slider" role="listbox">
+                                <div class="item active">
+                                  <img src="/images/Slideshow.jpg" alt="Chania" >
+                                </div>
 
-              <div class="item">
-                <img src="/images/Incredible_india.jpg" alt="Chania" >
-              </div>
-    
-              <div class="item">
-                <img src="/images/Incredible_India_by_bals4u2000.jpg" alt="Flower" >
-              </div>
+                                <div class="item">
+                                  <img src="/images/slideshow1.jpg" alt="Chania" >
+                                </div>
+                      
+                                <div class="item">
+                                  <img src="/images/slideshow3.jpg" alt="Flower" >
+                                </div>
 
-             <div class="item">
-                <img src="/images/The-Incredible-India.jpg" alt="Flower" >
-              </div>
-          </div>
-</div>
+                               <div class="item">
+                                  <img src="/images/slideshow4.jpg" alt="Flower" >
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="indiaDesc">
+                        <pre>            India, the largest country in Indian subcontinent and 7th largest country in the World is evolved from Indus Valley Civilization, one of the oldest civilizations of the World. Land of Myths, where threads of thousand years old cultures are bounding peoples of different dialects and background, land of colorful fairs and festivals and where nothing happens in small or limited measure. Tour India, feel the culture and love of India.
+                                          -INDIA TRIP!
+                        </pre>
+                    </div>
+                    <div class="clear"></div>
+                    <div id="profile"></div>
+                    <div class="clear"></div> 
+                </div>
+            </div>
+            <div class="clear"></div>
 
 
+            <!-- Footer Layout
+              –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            <div id="footer">
+                <footer class="footer-distributed">
+                  <div class="footer-left">
+                    <img src="/styles/peacock_logo.png" alt="Company Logo"></img>
+                    <p class="footer-company-name">NS3.INC &copy; 2016</p>
+                  </div>
 
+                  <div class="footer-center">
+                    <div>
+                      <i class="fa fa-map-marker"></i>
+                      <p><span>SuderDeep Engineering College</span><span>NH-24, Dasna, Ghaziabad</span> Uttar Pardesh, India</p>
+                    </div>
+                    <div>
+                      <i class="fa fa-phone"></i>
+                      <p>+91 9910154268</p>
+                    </div>
+                    <div>
+                      <i class="fa fa-envelope"></i>
+                      <p>ns3@outlook.com</p>
+                    </div>
+                  </div>
 
-<div class="footer">
-          <p></p>
-</div>
+                  <div class="footer-right">
 
+                    <p class="footer-company-about">
+                      <span>About the Group</span>
+                      Look for yourself at About Us :) .
+                    </p>
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+                    <!-- div class="footer-icons">
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                      <a href="#"><i class="fa fa-linkedin"></i></a>
+                      <a href="#"><i class="fa fa-github"></i></a>
 
-<!-- Scripts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <script src="scripts/jquery.js"></script>
-    <script src="scripts/mithril.min.js"></script>
-    <!-- <script src="scripts/mithril-ui-router.js"></script>
-    <script src="scripts/mithril-storage.js"></script> -->
-    <script src="scripts/browserify/main.js"></script>
+                    </div> -->
+
+                  </div>
+
+                </footer>
+            </div>
+      </div>
+
+      <!-- End Document
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+          
+
+      <!-- Scripts
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+          <script src="scripts/jquery.js"></script>
+          <script src="scripts/mithril.min.js"></script>
+          <script src="scripts/browserify/main.js"></script>
     
 
 </body>

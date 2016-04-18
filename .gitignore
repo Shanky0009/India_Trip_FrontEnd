@@ -4,3 +4,12 @@ dist
 .sass-cache
 bower_components
 test/bower_components
+app
+.images
+styles
+.call
+.loading
+.loadings
+.mail
+.peacock_logo
+.search-icon-hi

@@ -3,14 +3,8 @@ var Post=require('../models/Post');
 var Cookies= require('js-cookie');
 
 var postViewModel=(function(){
-
 	var vm={}
- 
 	vm.init=function(){
-
-		// vm.Plike=new Post.postLike();
-		// vm.Clike=new Post.commetLike();
-
 		vm.postID=m.prop("");
 		vm.postBody=m.prop("");
 		vm.postComment=m.prop(""); 
@@ -24,16 +18,12 @@ var postViewModel=(function(){
 				url:"http://localhost:3000/api/post",
 				data:{
 					userdata:Cookies.get("data"),
-					postBody:vm.postBody
-					
+					postBody:vm.postBody	
 				}
 			}).then(function(data){
-				if(data!=null)
-				{
+				if(data!=null) {
 					vm.response=data;
-				}
-				else
-				{
+				} else {
 					vm.response=data;
 				}
 			})
@@ -43,21 +33,14 @@ var postViewModel=(function(){
 		vm.logout=function()
 		{ 
 			var a=Cookies.get("data");
-
-			if(a!=null)
-			{	
+			if(a!=null) {	
 				Cookies.remove("data");
-
 				vm.response=("User Logged Out");
-				m.route("http://127.0.0.1:9000/");
-			}
-			else
-			{
+				m.route("http://localhost:9000/");
+			} else {
 				vm.response=("No User Logged In");
-			}
-			
-		}
-		
+			}	
+		}		
 	}
 	return vm;	
 }())

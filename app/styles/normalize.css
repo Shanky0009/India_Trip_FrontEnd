@@ -5,6 +5,9 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
+div.clear {
+    clear:both;
+}
 
 html {
   font-family: sans-serif; /* 1 */
@@ -426,18 +429,569 @@ th {
   padding: 0;
 }
 
-#destination table{
-  width:100%;
-  height: 500px;
+#destination
+{
+  margin: 0px 0px 0px 40px;
 }
 
-#destination button{
-  border: 1px solid black;
-  width: 170px;
-  height: 70px;
-  float:left; 
-  margin-left: 10px;
-  margin-top: 10px;
-  padding: 20px;
-  color: gray;
+#destination li{
+  margin: 0px 0.4em 0.4em 0px;
+    width: 13em;
+    height: 10em;
+    background: rgba(0,0,0,0.9);
+    color:white;
+    list-style: none;
+    float: left;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+#destination a{
+  display: block;
+    position: relative;
+    width: 100%;
+    height: 67%;
+}
+
+
+#destination img{
+    width: 100%;
+    height: 125%;
+    border-radius: 4px;
+}
+
+#destination span{
+    background: rgba(0,0,0,0.9);
+ }
+
+
+
+
+
+.navbar-inverse {
+    background-color: #222;
+    border-color: #080808;
+    width: 90%;
+    float: left;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+    margin: 6px 0px 0px 0px;
+    width: 100%;
+    padding: 0px 0px 0px 75px;
+}
+
+.nav-tabs>li {
+    float: left;
+    margin-bottom: -1px;
+    margin-left: 118px;
+}
+
+
+.logout {
+    float: left;
+    width: 10%;
+    padding: 0px;
+    margin: -1px 0px 0px 0px;
+}
+
+
+.logout button
+{
+  background-color: #1A191B;
+  padding-bottom: 43px;
+  padding-top: 7px;
+  width: 100%;
+}
+
+
+
+#adminlogged ul {
+    border-bottom: 1px solid #ddd;
+    margin: 6px 0px 0px 0px;
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    float: left;
+}
+
+#usrDtl {
+    width: 80%;
+    border-radius: 6px;
+    background-color: white;
+    margin: auto;
+}
+
+#usrDtl table{
+    margin: 20px;
+}
+
+#usrDtl tr,td{
+    font-family: "Lucida Console", Courier, monospace;
+}
+
+#htlMain {
+    margin: 0px 0px 0px 320px;
+}
+
+#htlMain form{
+    margin: 0px 0px 0px 130px;
+}
+
+.usrHtl li{
+    width: 30%;
+    background-color: white;
+    margin: 0px 20px;
+    border-radius: 6px;
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 45px;
+    float: left;
+}
+
+#htlUpdt{
+    width: 50%;
+    margin: 0px 0px 0px 300px;
+    border: 1px solid #FDA94E;
+    padding-top: 40px;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    
+}
+
+#htlUpdt form{
+    padding-left: 130px;
+    width: 95%;
+    height: 690px;
+    }
+
+
+#htlUpdt span{
+    float: left;
+    padding-right: 30px;
+}
+
+
+#htlUpdt input{
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: transparent;
+}
+
+
+#htlUpdt input::-webkit-input-placeholder{
+    color: gray !important;
+}
+
+
+#htlUpdt label{
+    width: 100%;
+}
+
+#htlUpdt h1{   
+    margin: 0px 150px;
+    
+}
+
+#htlForm button{
+      float: right;
+}
+
+
+#htlForm form[class=download_Form]{
+    float: left;
+    width: 43%;
+    margin-left: 20px;
+    padding-right: 30px;
+    padding-left: 0px;
+    height: 80px;
+    border: 1px solid gray;
+    border-radius: 6px;    
+}
+
+#htlForm input[name=file]{
+  border:none;
+}
+
+
+#dstUpdt {
+    width: 50%;
+    margin: 0px 0px 0px 300px;
+    border: 1px solid #FDA94E;
+    padding-top: 40px;
+    background-color: whitesmoke;
+    border-radius: 6px;
+}
+
+#dstUpdt form{
+    padding-left: 130px;
+    width: 95%;
+    height: 400px;
+}
+
+#dstUpdt input::-webkit-input-placeholder{
+    color: gray !important;
+}
+
+#dstUpdt span{
+    float: left;
+    padding-right: 30px;
+}
+
+
+#dstUpdt input{
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: transparent;
+}
+
+#dstUpdt label{
+    width: 100%;
+}
+
+#dstUpdt h1{      
+    margin: 0px 95px;  
+}
+
+#dstUpdt button{
+      float: right;
+}
+
+
+#dstUpdt form[class=download_Form]{
+    float: left;
+    width: 43%;
+    margin-left: 20px;
+    padding-right: 30px;
+    padding-left: 0px;
+    height: 80px;
+    border: 1px solid gray;
+    border-radius: 6px;    
+}
+
+#dstUpdt input[name=file]{
+  border:none;
+}
+
+a[disabled="Booking Cancelled"] {
+   pointer-events: none;
+}
+
+.htlSearch{
+    margin: 0px 0px 0px 420px;
+}
+
+.htlFind h3 {
+    margin: 0px 0px 0px -45px;
+    width: 140%;
+}
+
+.htlRes h3{
+   width: 30%;
+    margin: 52px;
+}
+
+
+.search {
+    width: 357px;
+    margin: 4px;
+}
+
+#search_text{
+    width: 297px;
+    padding: 15px 0 15px 20px;
+    font-size: 16px;
+    font-family: Montserrat, sans-serif;
+    border: 0 none;
+    height: 52px;
+    margin-right: 0;
+    color: white;
+    outline: none;
+    background: #1f7f5c;
+    float: left;
+    box-sizing: border-box;
+    transition: all 0.15s;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: white;
+}
+#search_text:focus {
+    background: rgb(64, 151, 119);
+}
+#search_button {
+    border: 0 none;
+    background: #1f7f5c url(search-icon-hi.png) center no-repeat;
+    width: 60px;
+    float: left;
+    padding: 0;
+    text-align: center;
+    height: 52px;
+    cursor: pointer;
+}
+
+
+/*Footer Index Html Page*/
+
+
+#footer {
+   position:inherit;
+   bottom:0px;
+   width:100%;
+   height:100px;   
+}
+
+.footer-distributed{
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  bottom: 0;
+  padding: 20px 20px;
+  margin-top: 80px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+  color:  #ffffff;
+  font: normal 36px 'Cookie', cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span{
+  color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+  color:  #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+  color:  #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0px 100px;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+  width: 35%;
+}
+
+.footer-distributed .footer-center i{
+  background-color:  #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin:0;
+}
+
+.footer-distributed .footer-center p span{
+  display:block;
+  font-weight: normal;
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+  color:  #5383d3;
+  text-decoration: none;;
+}
+
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+  display: block;
+  color:  #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+  .footer-distributed{
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i{
+    margin-left: 0;
+  }
+
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-map-marker:before {
+    content: url(location.png);
+}
+
+.fa-phone:before {
+    content: url(call.png);
+}
+
+.fa-envelope:before {
+    content: url(mail.png);
+}
+
+.footer-left img {
+    width: 30%;
+    margin: 0px 0px -15px 71px;
+}
+
+
+/*About Us CSS*/
+
+.aboutUs h1{
+    margin: auto;
+    width: 20%;
+    font-family: serif;
+}
+.about{
+    width: 20%;
+    margin: 30px;
+    background-color: white;
+    float:left; 
+}
+
+.about img {
+    width: 100%;
+}
+
+.about p{
+    padding: 30px;
+}
+
+.about h {
+    margin: 0px 0px 0px 50px;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.shanky
+{
+  padding-left: 50px;
+}
+
+.shaan{
+    padding-left: 50px;
+}
+
+.sbz{
+    padding-left: 30px;
+}
+
+.nizam{
+    padding-left: 11px;
+}
+.about h1{
+    float: left;
+    width: 100%;
+    margin: 0;
+    font-family: 'Lucida Sans Typewriter';
+    font-style:italic;
 }

@@ -25,11 +25,23 @@ user.view2=require('./views/showView');
 user.view3=require('./views/loginView');
 user.resetview=require('./views/resetView');
 user.forgotview=require('./views/forgotView');
+user.aboutview = require('./views/aboutUsView');
+
+var hotel={};
+hotel.model=require('./models/Hotel');
+hotel.view6=require('./views/hotelSearchView');
+var hotelSearchModule={controller:hotel.controller, view:hotel.view6};
+hotel.view7=require('./views/hotelBookingView');
+var hotelBookingModule={controller:hotel.controller, view:hotel.view7};
 
 var destination={};
 destination.model = require('./models/Destination');
 destination.destinationview=require('./views/destinationView');
-destination.destinationdetailedview=require('./views/destinationDetailedView');
+
+var profile={};
+profile.model=require('./models/Profile');
+profile.loggedview=require('./views/loggedView');
+profile.adminloggedview=require('./views/adminLoggedView');
 
 
 
@@ -39,46 +51,29 @@ var showModule={controller: user.controller, view: user.view2};
 var loginModule={controller: user.controller, view: user.view3};
 var resetModule={controller: user.controller, view: user.resetview};
 var forgotModule={controller: user.controller, view: user.forgotview};
+var aboutModule={controller: user.controller, view: user.aboutview};
 var destinationModule={controller: destination.controller, view: destination.destinationview};
-var destinationDetailedModule={controller: destination.controller, view: destination.destinationdetailedview};
+var loggedModule={controller: profile.controller, view: profile.loggedview};
+var adminLoggedModule={controller: profile.controller, view: profile.adminloggedview};
 
 
 
 
-if(Cookies.get("data")==null)
-{
+
 m.route(document.getElementById("main"),"/",{
 		"/":"/",
 		"/login":loginModule,
-	    "/show":showModule,
-	    "/sign-up":signModule,
-      "/reset":resetModule,
-      "/forgot":forgotModule,
-      "/posts":postModule,
-      "/destinations":destinationModule,
-      "/destinations/info":destinationDetailedModule
-
+	      "/show":showModule,
+	      "/sign-up":signModule,
+            "/reset":resetModule,
+            "/forgot":forgotModule,
+            "/posts":postModule,
+            "/destinations":destinationModule,
+            "/logged":loggedModule,
+            "/adminLogged":adminLoggedModule,
+            "/search":hotelSearchModule,
+            "/hotels/book":hotelBookingModule,
+            "/about":aboutModule
 	});
 
-}
-else
-{
-m.route(document.getElementById('main'),"/posts",{
-	"/":mainModule,
-	"/posts":postModule,
-	"/show":showModule,
-	    "/sign-up":signModule,
-      "/reset":resetModule,
-      "/forgot":forgotModule,
-      "/destinations":destinationModule
-});
-
-}
-
-
-
-
-
-
-// m.module(document.getElementById("main-up"), {controller: user.controller, view: user.view});
 
