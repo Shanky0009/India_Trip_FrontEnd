@@ -1,13 +1,27 @@
+/*
+Loads view models here 
+*/
 var vm = require('../viewModels/userViewModel');
 
+/*
+view model initialized
+*/
 vm.init()
 
+/*
+onsubmit method
+*/
 var showsubmit= function(){
 	vm.show();
 	return false;
 }
+/*
+onsubmit method ends here
+*/
 
-
+/*******************************************
+Displays registered users info to Admin view
+********************************************/
 var showView=function()
 {
 	return m("div[id=show]",[
@@ -26,6 +40,8 @@ var showView=function()
 		])
 	])		
 };
-
+/************************************************
+Displays registered users info to Admin ends here
+*************************************************/
 
 module.exports=showView;

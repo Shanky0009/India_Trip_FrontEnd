@@ -1,13 +1,27 @@
-
+/*
+Loads view models here 
+*/
 var vm = require('../viewModels/userViewModel');
 
+/*
+view model initialized
+*/
 vm.init()
 
+/*
+onsubmit method
+*/
 var reset= function(){
 	vm.PReset();
 	return false;
 }
+/*
+onsubmit method ends here
+*/
 
+/*******************
+Password reset view
+*********************/
 var resetView=function()
 {
 	return m("div[id=reset]",[
@@ -24,5 +38,8 @@ var resetView=function()
 		m("a",{config:m.route,href:"/forgot"},"Click to Change Password with your Token")
 	])
 };
+/****************************
+Password reset view ends here
+*****************************/
 
 module.exports=resetView;

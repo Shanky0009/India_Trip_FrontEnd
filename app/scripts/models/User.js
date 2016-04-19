@@ -1,5 +1,11 @@
+/*
+Defining User component
+*/
 var User={};
 
+/*
+Properties of User
+*/
 User.user=function(data){
 	this.username=m.prop(data.username);
 	this.emailID=m.prop(data.emailID);
@@ -9,6 +15,12 @@ User.user=function(data){
 	this.userData=m.prop(data.userData);
 }
 
+/*
+List of User component
+*/
 User.userlist=Array;
 
+/*
+User model exports here
+*/
 module.exports=User;

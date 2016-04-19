@@ -1,12 +1,18 @@
- 
+/*
+Loads all models here 
+*/ 
 var vm = require('../viewModels/destinationViewModel');
-
-
+user.model = require('../models/User');
 var Cookies= require('js-cookie');
 
+/*
+view model initialized
+*/
 vm.init();
 
-
+/*
+onsubmit methods
+*/
 var destinationClick= function(){
 	vm.destinationNo();
 	return false;
@@ -15,8 +21,13 @@ var destinationClick= function(){
 var login= function(){
 	vm.logOne();	
 }
+/*
+onsubmit methods ends here
+*/
 
-
+/**********************
+Home Page view with nav
+*********************/
 var userView=function() 
 { 
 	return	m("div[id=First]",[
@@ -32,10 +43,15 @@ var userView=function()
 		m("hr")
 	])
 };
+/********************************
+Home Page view with nav ends here
+*********************************/
 
+/*Empty model method object.*/
 var user={};
-user.model = require('../models/User');
+/*module gets user controller and view*/
 var mainModule={controller: user.controller, view: userView};
+/*initialize the application*/
 m.route(document.getElementById('First'),"/",{
 		"/":mainModule
 });

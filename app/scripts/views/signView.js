@@ -1,13 +1,28 @@
+/*
+Loads view models here 
+*/
 var vm = require('../viewModels/userViewModel');
 var Cookies= require('js-cookie');
 
+/*
+view model initialized
+*/
 vm.init()
 
+/*
+onsubmit method
+*/
 var submit= function(){
 	vm.add();
 	return false; 
 }
+/*
+onsubmit method ends here
+*/
 
+/*********************
+Registration page view
+*********************/
 var signView=function()
 {
 	return m("div[id=signIn]",[
@@ -28,5 +43,8 @@ var signView=function()
 		m("h",vm.response1)
 	])	
 };
+/*******************************
+Registration page view ends here
+********************************/
 
 module.exports=signView;

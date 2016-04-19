@@ -1,13 +1,28 @@
+/*
+Loads view models here 
+*/
 var vm = require('../viewModels/destinationViewModel');
 
+/*
+view model initialized
+*/
 vm.init()
 
+/*
+onsubmit method
+*/
 var destinationDa=function(e){
 	console.log(vm.list);
 	vm.destinationda(e);	
 	return false;
 }
-  
+/*
+onsubmit method ends here
+*/  
+
+/***********************************************
+All destination view with their details in modal
+*************************************************/
 var destinationView=function()
 {
 	return m("div[id=destination]",[
@@ -74,5 +89,9 @@ var destinationView=function()
 		])
 	])					
 };
+
+/*********************************************************
+All destination view with their details in modal ends here
+**********************************************************/
 
 module.exports=destinationView;

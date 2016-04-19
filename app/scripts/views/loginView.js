@@ -1,14 +1,28 @@
+/*
+Loads view models here 
+*/
 var vm = require('../viewModels/userViewModel');
 
+/*
+view model initialized
+*/
 vm.init()
 
+/*
+onsubmit method
+*/
 var loginsubmit= function(){
 	vm.login();
 	return false;
 }
+/*
+onsubmit method ends here
+*/
 
 
-
+/**********************************
+Login page view and password reset
+***********************************/
 var loginView=function()
 {
 	return m("div[id=login]",[
@@ -37,6 +51,8 @@ var loginView=function()
 		m("div[class=clear]")
 	])
 };
-
+/*******************************************
+Login page view and password reset ends here
+********************************************/
 
 module.exports=loginView;

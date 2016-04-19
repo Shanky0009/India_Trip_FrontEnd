@@ -1,14 +1,23 @@
-  
+/*
+Load all models here
+*/  
 var User=require('../models/User');
 var Cookies= require('js-cookie');
 
+/*
+definig the user view-model
+*/
 var userViewModel=(function(){
-
+	/*Empty view model method object.*/
 	var vm={}
- 
+
+ 	/*initializing view model.*/
 	vm.init=function(){ 
 
+		/*Running lists of model.*/
 		vm.list=new User.userlist();
+
+		/*Slot to store data of new model before it is created.*/
 		vm.username=m.prop("");
 		vm.emailID=m.prop("");
 		vm.password=m.prop(""); 
@@ -17,8 +26,16 @@ var userViewModel=(function(){
 		vm.token1=m.prop("");
 		vm.response=m.prop("");
 		vm.response1=m.prop("");
+		/*Slot to store data of new model before it is created ends here.*/
 		
-//user registration			
+
+/**************************************************************************************************************************/
+/***************************************** All view model methods goes here ***********************************************/
+/**************************************************************************************************************************/
+		
+		/*****************************
+  		New users gets registered here.
+		*******************************/
 		vm.add=function()
 		{
 			m.request({
@@ -38,8 +55,14 @@ var userViewModel=(function(){
 				}
 			})	
 		}
+		/**********************************
+  		New users gets registered ends here.
+		***********************************/
 
-//user details
+
+		/*************************************
+  		Admin can view registered users details.
+		**************************************/
 		vm.show=function()
 		{
 			m.request({
@@ -56,8 +79,14 @@ var userViewModel=(function(){
 				}
 			})
 		}
+		/************************************************
+  		Admin can view registered users details ends here.
+		*************************************************/
 
-//user login
+
+		/*****************************
+  		User login and authentication.
+		******************************/
 		vm.login=function()
 		{
 			m.request({
@@ -86,10 +115,15 @@ var userViewModel=(function(){
 				else vm.response1=data;
 			})
 		}
+		/**************************************
+  		User login and authentication ends here.
+		***************************************/
 
 
 
-//user password reset request
+		/********************************
+  		User requests for password reset.
+		*********************************/
 		vm.PReset=function()
 		{
 			m.request({
@@ -105,8 +139,13 @@ var userViewModel=(function(){
 				}
 			})
 		}
+		/*****************************************
+  		User requests for password reset ends here.
+		******************************************/
 
-//user password update
+		/******************************************
+  		User updates there old password using token.
+		*******************************************/
 		vm.PUpdate=function()
 		{
 			m.request({
@@ -122,8 +161,17 @@ var userViewModel=(function(){
 				}
 			})
 		}
+		/****************************************************
+  		User updates there old password using token ends here.
+		*****************************************************/
 	}
+/**************************************************************************************************************************/
+/***************************************** All view model methods ends here ***********************************************/
+/**************************************************************************************************************************/
+
+	/*view model gets returned*/
 	return vm;
 }())
 
+/*hotel view model exports here*/
 module.exports=userViewModel;

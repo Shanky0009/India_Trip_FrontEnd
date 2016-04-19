@@ -1,5 +1,12 @@
+/*
+Defining Profile component
+*/
 var Profile={};
 
+
+/*
+Properties of Profile
+*/
 Profile.profile=function(data){
 	this.first_name=m.prop(data.first_name);
 	this.last_name=m.prop(data.last_name);
@@ -15,7 +22,14 @@ Profile.profile=function(data){
 	this.userInfo=m.prop(data.userInfo);
 }
 
+
+/*
+Lists of Profile component
+*/
 Profile.profilelist=Array;
 Profile.profileHtllist=Array;
 
+/*
+Profile model exports here
+*/
 module.exports=Profile;

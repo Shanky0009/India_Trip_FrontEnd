@@ -1,13 +1,23 @@
+/*
+Load all models here
+*/
 var Profile=require('../models/Profile');
 var Cookies= require('js-cookie');
 
+/*
+definig the view-model
+*/
 var profileViewModel=(function(){
+	/*Empty view model method object.*/
 	var vm={}; 
+	/*initializing view model.*/
 	vm.init=function()
-	{
+	{	
+		/*Running lists of model.*/
 		vm.listP=new Profile.profilelist();
 		vm.listHtl=new Profile.profileHtllist();
 
+		/*Slot to store data of profile display model before it is created.*/
 		vm.first_name=m.prop("");
 		vm.last_name=m.prop("");
 		vm.city=m.prop("");
@@ -19,7 +29,9 @@ var profileViewModel=(function(){
 		vm.DOB=m.prop("");
 		vm.pinCode=m.prop("");
 		vm.UserID=m.prop("");
+		/*Slot to store data of profile display model before it is created ends here.*/
 
+		/*Slot to store data of profile update model before it is created.*/
 		vm.first_name1=m.prop("");
 		vm.last_name1=m.prop("");
 		vm.city1=m.prop("");
@@ -31,7 +43,9 @@ var profileViewModel=(function(){
 		vm.DOB1=m.prop("");
 		vm.pinCode1=m.prop("");
 		vm.UserID1=m.prop("");
+		/*Slot to store data of profile update model before it is created ends here.*/
 
+		/*Slot to store data of destination before it is created.*/
 		vm.UserID2=m.prop("");
 		vm.Place=m.prop("");
 		vm.Description=m.prop("");
@@ -43,7 +57,9 @@ var profileViewModel=(function(){
 		vm.State=m.prop("");
 		vm.Tourism_Office=m.prop("");
 		vm.file=m.prop("");
+		/*Slot to store data of destination before it is created ends here.*/
 
+		/*Slot to store data of hotel before it is created.*/
 		vm.place=m.prop("");
 		vm.Hotel_name=m.prop("");
 		vm.Address=m.prop("");
@@ -55,10 +71,19 @@ var profileViewModel=(function(){
 		vm.Phone_no=m.prop("");
 		vm.Website=m.prop("");
 		vm.State=m.prop("");
+		/*Slot to store data of hotel before it is created ends here.*/
 
+		/*Slot to store data of responses before it is created.*/
 		vm.res=m.prop("");
 		vm.resU=m.prop("");
 
+/**************************************************************************************************************************/
+/***************************************** All view model methods goes here ***********************************************/
+/**************************************************************************************************************************/
+		
+		/***********************************
+  		Displays profile of logged in users.
+		************************************/
 		vm.loged=function()
 		{
 			vm.listP.pop();
@@ -88,9 +113,14 @@ var profileViewModel=(function(){
 				}				
 			})			
 		}
+		/********************************************
+  		Displays profile of logged in users ends here.
+		*********************************************/
 
 
-			
+		/******************************
+  		Users can update their profile .
+		********************************/
 		vm.update=function()
 		{
 			cookieData=Cookies.get("data")
@@ -118,9 +148,14 @@ var profileViewModel=(function(){
 				vm.res=data;
 			})
 		}
+		/***************************************
+  		Users can update their profile ends here.
+		****************************************/
 
 
-
+		/****************************************
+  		Displays details of booked hotel by user.
+		*****************************************/
 		vm.hotel=function()
 		{
 			a=Cookies.get('data');
@@ -140,8 +175,13 @@ var profileViewModel=(function(){
 				}					
 			})	
 		}
+		/*************************************************
+  		Displays details of booked hotel by user ends here.
+		**************************************************/
 
-
+		/************************************
+  		Users can cancel their hotel booking.
+		*************************************/
 		vm.cancelBooking=function(e)
 		{
 			var id=e._id;
@@ -154,13 +194,17 @@ var profileViewModel=(function(){
 			}).then(function(data){
 					
 				vm.hotel();
-			})
-			
+			})	
 		}
+		/*********************************************
+  		Users can cancel their hotel booking ends here.
+		**********************************************/
 
 
 
-		//user logout
+		/*********************************
+  		Users logout, deletes cookie data.
+		**********************************/
 		vm.logout=function()
 		{ 
 			var a=Cookies.get("data");
@@ -172,7 +216,13 @@ var profileViewModel=(function(){
 				vm.response=("No User Logged In");
 			}	
 		}
+		/******************************************
+  		Users logout, deletes cookie data ends here.
+		*******************************************/
 
+		/***************************************
+  		Admin can view registered users details.
+		****************************************/
 		vm.userShow=function()
 		{
 			m.request({
@@ -185,10 +235,15 @@ var profileViewModel=(function(){
 				}					
 			})	
 		}
+		/************************************************
+  		Admin can view registered users details ends here.
+		*************************************************/
 
+		/**********************************************
+  		Admin can view hotel booking of registered users.
+		***********************************************/
 		vm.userHotels=function()
 		{
-
 			m.request({
 				 method: "POST",
 				 url: "http://localhost:3000/api/hotels/details",
@@ -202,7 +257,13 @@ var profileViewModel=(function(){
 				}					
 			})	
 		}
+		/********************************************************
+  		Admin can view hotel booking of registered users ends here.
+		*********************************************************/
 
+		/*********************************
+  		Admin can delete registered users.
+		**********************************/
 		vm.deleteUser=function(e)
 		{
 			m.request({
@@ -215,8 +276,13 @@ var profileViewModel=(function(){
 				vm.res(data);					
 			})	
 		}
+		/******************************************
+  		Admin can delete registered users ends here.
+		*******************************************/
 
-
+		/**********************************************
+  		Admin can delete hotel booking registered users.
+		***********************************************/
 		vm.deleteBooking=function(e)
 		{
 			m.request({
@@ -229,11 +295,16 @@ var profileViewModel=(function(){
 				vm.userHotels();					
 			})
 		}
+		/********************************************************
+  		Admin can delete hotel booking registered users ends here.
+		*********************************************************/
 
 
+		/******************************************
+  		Admin can add new destinations to project.
+		*******************************************/
 		vm.destinationUpdate=function()
 		{
-
 			var x=document.getElementById('file').files;
 			var url="/images/destination/"+x[0].name;			
 			
@@ -256,8 +327,13 @@ var profileViewModel=(function(){
 				vm.res=data;
 			})	
 		}
+		/**************************************************
+  		Admin can add new destinations to project ends here.
+		***************************************************/
 
-
+		/*******************************************
+  		Admin can add image to new added destination.
+		********************************************/
 		vm.upload=function()
 		{
 			var file=new FormData;
@@ -265,7 +341,6 @@ var profileViewModel=(function(){
 			for (var i = 0; i < x.length; i++) {
 				file.append("file" + i, x[i])
 			}
-
 			m.request({
 				method: "POST",
 				url: "http://localhost:3000/api/destination/upload",
@@ -274,11 +349,15 @@ var profileViewModel=(function(){
 			}).then(function(data)
 			{
 				vm.resU=data;
-			})
-			
-		}		
+			})	
+		}
+		/*****************************************************
+  		Admin can add image to new added destination ends here.
+		******************************************************/		
 
-
+		/*************************************************
+  		Admin can add images to newly hotel to the project.
+		*************************************************/
 		vm.htlUpload=function()
 		{
 			var file=new FormData;
@@ -308,10 +387,15 @@ var profileViewModel=(function(){
 			}).then(function(data)
 			{
 				vm.resU=data;
-			})
-			
+			})	
 		}
+		/***********************************************************
+  		Admin can add images to newly hotel to the project ends here.
+		************************************************************/
 
+		/*********************************
+  		Admin can add hotel to the project.
+		***********************************/
 		vm.hotelUpdate=function()
 		{
 			var urlf1=document.getElementById('file1').files;
@@ -351,8 +435,17 @@ var profileViewModel=(function(){
 				vm.res=data;
 			})	
 		}
+		/*******************************************
+  		Admin can add hotel to the project ends here.
+		********************************************/
 	}
+/**************************************************************************************************************************/
+/***************************************** All view model methods ends here ***********************************************/
+/**************************************************************************************************************************/
+	
+	/*view model gets returned*/
 	return vm;
 }())
 
+/*profile view model exports here*/
 module.exports=profileViewModel;	

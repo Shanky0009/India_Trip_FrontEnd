@@ -1,12 +1,27 @@
+/*
+Loads view models here 
+*/
 var vm = require('../viewModels/userViewModel');
 
+/*
+view model initialized
+*/
 vm.init()
 
+/*
+onsubmit method
+*/
 var forgot= function(){
 	vm.PUpdate();
 	return false;
 }
+/*
+onsubmit method ends here
+*/
 
+/********************
+Update password view
+********************/
 var forgotView=function()
 {
 	return m("div[id=forgot]",[
@@ -21,5 +36,8 @@ var forgotView=function()
 		])
 	])
 };
+/******************************
+Update password view ends here
+*******************************/
 
 module.exports=forgotView;
